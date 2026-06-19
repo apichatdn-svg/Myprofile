@@ -1,0 +1,275 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile Card</title>
+
+<style>
+:root{
+    --primary:#2196f3;
+    --primary-dark:#1565c0;
+    --card:#ffffff;
+    --text:#263238;
+    --muted:#607d8b;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Tahoma,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#e3f2fd,#f8fbff);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.card{
+    width:100%;
+    max-width:900px;
+    background:var(--card);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(33,150,243,0.15);
+}
+
+/* รูปปก */
+.cover{
+    height:250px;
+    overflow:hidden;
+}
+
+.cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ส่วนหัว */
+.header{
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    color:white;
+    text-align:center;
+    padding:0 20px 40px;
+    margin-top:-65px;
+}
+
+/* รูปโปรไฟล์ */
+.avatar{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    background:white;
+    display:block;
+    margin:0 auto 15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.header h1{
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+.header p{
+    opacity:.95;
+}
+
+.content{
+    padding:30px;
+    display:grid;
+    gap:24px;
+}
+
+.section{
+    background:#f9fcff;
+    border:1px solid #e3f2fd;
+    border-radius:16px;
+    padding:20px;
+}
+
+.section-title{
+    color:var(--primary-dark);
+    font-size:1.1rem;
+    font-weight:700;
+    margin-bottom:15px;
+    border-left:5px solid var(--primary);
+    padding-left:10px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+}
+
+.info-item{
+    padding:10px;
+    background:white;
+    border-radius:10px;
+}
+
+.label{
+    color:var(--muted);
+    font-size:.85rem;
+}
+
+.value{
+    color:var(--text);
+    font-weight:600;
+    margin-top:3px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.tag{
+    background:linear-gradient(135deg,#42a5f5,#1e88e5);
+    color:white;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.quote{
+    background:linear-gradient(135deg,#e3f2fd,#fff);
+    border-left:6px solid var(--primary);
+    padding:20px;
+    border-radius:12px;
+    font-size:1.05rem;
+    color:var(--primary-dark);
+    font-style:italic;
+    text-align:center;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+@media(max-width:600px){
+    .header h1{
+        font-size:1.6rem;
+    }
+
+    .cover{
+        height:180px;
+    }
+
+    .avatar{
+        width:110px;
+        height:110px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- รูปปก -->
+    <div class="cover">
+        <img src="cover.jpg" alt="Cover">
+    </div>
+
+    <!-- ส่วนหัว -->
+    <div class="header">
+        <img src="profile.jpg" alt="Profile" class="avatar">
+
+        <h1>ชื่อ - นามสกุล</h1>
+        <p>ระดับชั้น • ชื่อโรงเรียน</p>
+    </div>
+
+    <div class="content">
+
+        <div class="section">
+            <div class="section-title">📌 ข้อมูลส่วนตัว</div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="label">ชื่อเล่น</div>
+                    <div class="value">ต้น</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">วันเกิด</div>
+                    <div class="value">1 มกราคม 2550</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">เพศ</div>
+                    <div class="value">ชาย</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">กรุ๊ปเลือด</div>
+                    <div class="value">O</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🎯 ความสนใจ</div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="label">อาชีพในฝัน</div>
+                    <div class="value">โปรแกรมเมอร์</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">อาหารโปรด</div>
+                    <div class="value">กะเพรา</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">งานอดิเรก</div>
+                    <div class="value">เขียนโค้ด</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🚀 ทักษะ</div>
+
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">💡 คติประจำใจ</div>
+
+            <div class="quote">
+                "ความพยายามอยู่ที่ไหน ความสำเร็จอยู่ที่นั่น"
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Student Profile Card • Modern Blue Theme
+    </div>
+
+</div>
+
+</body>
+</html>
+```
